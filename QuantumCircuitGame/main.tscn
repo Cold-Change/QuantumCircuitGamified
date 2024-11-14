@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://bklgpcqp3hq4d"]
+
+[ext_resource type="Script" path="res://main.gd" id="1_anppc"]
+[ext_resource type="PackedScene" uid="uid://cmvfvhlf76e0s" path="res://WorldObjects/stage.tscn" id="1_p4oik"]
+[ext_resource type="PackedScene" uid="uid://bnl5lsnwdas3i" path="res://Player/player.tscn" id="2_b7m5a"]
+
+[node name="Main" type="Node"]
+script = ExtResource("1_anppc")
+
+[node name="Stage" parent="." instance=ExtResource("1_p4oik")]
+
+[node name="Player" parent="." instance=ExtResource("2_b7m5a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+
+[node name="SpotLight3D" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 225.546, 0)
+visible = false
+spot_range = 500.0
+spot_angle = 60.0
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 138.117, 0)
+light_energy = 0.05
+omni_range = 676.88

@@ -1,0 +1,8 @@
+SpotLight3D
+OmniLight3D
+DirectionalLight3D
+Node
+MeshInstance3D
+CollisionShape3D
+StaticBody3D
+TextureRect

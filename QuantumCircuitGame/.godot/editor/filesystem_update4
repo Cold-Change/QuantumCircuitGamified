@@ -1,0 +1,11 @@
+res://main.tscn
+res://Player/player.tscn
+res://Player/player_model.tscn
+res://UI/player_ui.tscn
+res://Player/Gun/gun.tscn
+res://WorldObjects/stage.tscn
+res://Player/Gun/gun.gd
+res://main.gd
+res://Player/Gun/bullet.gd
+res://Player/Gun/bullet.tscn
+res://world_environment.tres
