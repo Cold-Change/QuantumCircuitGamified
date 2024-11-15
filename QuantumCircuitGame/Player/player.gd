@@ -52,6 +52,8 @@ func _physics_process(delta):
 	
 	handleCamera()
 	
+	checkForReset()
+	
 	move_and_slide()
 
 func _unhandled_input(event):
@@ -133,6 +135,10 @@ func handleCamera():
 
 func getEntity():
 	return entity_num
+
+func checkForReset():
+	if (abs(position.x) >= 250) or (abs(position.z) >= 250) or (position.y <= -50):
+		reset()
 
 func reset():
 	transform.basis = init_basis
