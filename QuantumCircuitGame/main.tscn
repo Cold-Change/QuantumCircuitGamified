@@ -1,8 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://bklgpcqp3hq4d"]
+[gd_scene load_steps=7 format=3 uid="uid://bklgpcqp3hq4d"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_anppc"]
 [ext_resource type="PackedScene" uid="uid://cmvfvhlf76e0s" path="res://WorldObjects/stage.tscn" id="1_p4oik"]
 [ext_resource type="PackedScene" uid="uid://bnl5lsnwdas3i" path="res://Player/player.tscn" id="2_b7m5a"]
+[ext_resource type="PackedScene" uid="uid://dikv3pheie510" path="res://WorldObjects/Gates/small_gate.tscn" id="4_jtt04"]
+[ext_resource type="PackedScene" uid="uid://cx8mhyp50y26t" path="res://WorldObjects/Gates/medium_gate.tscn" id="5_ck6cm"]
+[ext_resource type="PackedScene" uid="uid://gqmx0ttu6smj" path="res://WorldObjects/Gates/large_gate.tscn" id="6_3eu1s"]
 
 [node name="Main" type="Node"]
 script = ExtResource("1_anppc")
@@ -22,3 +25,21 @@ spot_angle = 60.0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 138.117, 0)
 light_energy = 0.05
 omni_range = 676.88
+
+[node name="SmallGate" parent="." instance=ExtResource("4_jtt04")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.02841, 3, 12)
+
+[node name="SmallGate2" parent="." instance=ExtResource("4_jtt04")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.19694, 3, 12)
+
+[node name="SmallGate3" parent="." instance=ExtResource("4_jtt04")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.60133, 3, 12)
+
+[node name="MediumGate" parent="." instance=ExtResource("5_ck6cm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.50908, 3, 12)
+
+[node name="MediumGate2" parent="." instance=ExtResource("5_ck6cm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.9779, 3, 12)
+
+[node name="LargeGate" parent="." instance=ExtResource("6_3eu1s")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.687, 3, 12)

@@ -110,7 +110,7 @@ shadow_mesh = SubResource("ArrayMesh_1v278")
 script = ExtResource("1_pe81g")
 
 [node name="BulletPath" type="RayCast3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.402752)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.515192)
 target_position = Vector3(0, 0, 1)
 
 [node name="Cube" type="MeshInstance3D" parent="."]

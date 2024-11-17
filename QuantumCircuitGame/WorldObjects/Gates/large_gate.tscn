@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://gqmx0ttu6smj"]
+
+[ext_resource type="Texture2D" uid="uid://bix51oq7qqj6u" path="res://WorldObjects/Gates/GateGraphics/LargeGates-Sheet.png" id="1_8if2c"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_subln"]
+size = Vector3(0.64, 1.92, 0.32)
+
+[node name="LargeGate" type="StaticBody3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_subln")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+texture_filter = 2
+texture = ExtResource("1_8if2c")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 2, 0)
+spot_range = 4.0
+spot_angle = 30.0

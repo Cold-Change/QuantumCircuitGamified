@@ -2,26 +2,27 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bv1e66tw5g41d"
-path="res://.godot/imported/ZGate.png-c2656bcf1118f1b47ce4832964deb033.ctex"
+uid="uid://bnhfxphdisv4b"
+path.s3tc="res://.godot/imported/MediumGates-Sheet.png-0a040010cbbcde2c61e71da52e6bd634.s3tc.ctex"
 metadata={
-"vram_texture": false
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
 }
 
 [deps]
 
-source_file="res://WorldObjects/Gates/GateGraphics/ZGate.png"
-dest_files=["res://.godot/imported/ZGate.png-c2656bcf1118f1b47ce4832964deb033.ctex"]
+source_file="res://WorldObjects/Gates/GateGraphics/MediumGates-Sheet.png"
+dest_files=["res://.godot/imported/MediumGates-Sheet.png-0a040010cbbcde2c61e71da52e6bd634.s3tc.ctex"]
 
 [params]
 
-compress/mode=0
+compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
-mipmaps/generate=false
+mipmaps/generate=true
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""
@@ -31,4 +32,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=1
+detect_3d/compress_to=0

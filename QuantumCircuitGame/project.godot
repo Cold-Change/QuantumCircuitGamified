@@ -76,6 +76,10 @@ toggle_fullscreen={
 ]
 }
 
+[physics]
+
+common/physics_ticks_per_second=180
+
 [rendering]
 
 environment/defaults/default_environment="res://world_environment.tres"

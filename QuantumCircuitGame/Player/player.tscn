@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://bojux1muuloxn" path="res://UI/player_ui.tscn" id="3_fobn8"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_3ywxc"]
-radius = 0.46267
+radius = 0.833524
 height = 3.55928
 
 [node name="Player" type="CharacterBody3D" groups=["Player"]]

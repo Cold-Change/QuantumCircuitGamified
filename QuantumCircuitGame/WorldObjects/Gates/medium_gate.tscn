@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://cx8mhyp50y26t"]
+
+[ext_resource type="Texture2D" uid="uid://bnhfxphdisv4b" path="res://WorldObjects/Gates/GateGraphics/MediumGates-Sheet.png" id="1_1446g"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_subln"]
+size = Vector3(0.64, 1.28, 0.32)
+
+[node name="MediumGate" type="StaticBody3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_subln")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+texture_filter = 2
+texture = ExtResource("1_1446g")
+hframes = 2
+
+[node name="SpotLight3D" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 2, 0)
+spot_range = 4.0
+spot_angle = 30.0

@@ -1,9 +1,11 @@
 res://world_environment.tres
+res://WorldObjects/Gates/small_gate.tscn
 res://main.tscn
-res://main.gd
 res://Player/player.tscn
 res://Player/player_model.tscn
 res://UI/player_ui.tscn
 res://Player/Gun/gun.tscn
 res://WorldObjects/stage.tscn
 res://Player/Gun/bullet.tscn
+res://WorldObjects/Gates/medium_gate.tscn
+res://WorldObjects/Gates/large_gate.tscn
