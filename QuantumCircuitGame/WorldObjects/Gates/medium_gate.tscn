@@ -1,11 +1,16 @@
-[gd_scene load_steps=3 format=3 uid="uid://cx8mhyp50y26t"]
+[gd_scene load_steps=5 format=3 uid="uid://cx8mhyp50y26t"]
 
 [ext_resource type="Texture2D" uid="uid://bnhfxphdisv4b" path="res://WorldObjects/Gates/GateGraphics/MediumGates-Sheet.png" id="1_1446g"]
+[ext_resource type="Script" path="res://WorldObjects/Gates/gate.gd" id="1_ttjvp"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_subln"]
 size = Vector3(0.64, 1.28, 0.32)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_i2slj"]
+size = Vector3(0.64, 1.28, 0.32)
+
 [node name="MediumGate" type="StaticBody3D"]
+script = ExtResource("1_ttjvp")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("BoxShape3D_subln")
@@ -19,3 +24,11 @@ hframes = 2
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 2, 0)
 spot_range = 4.0
 spot_angle = 30.0
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1.1, 0, 0, 0, 1.1, 0, 0, 0, 1.1, 0, 0, 0)
+shape = SubResource("BoxShape3D_i2slj")
+
+[connection signal="area_entered" from="Area3D" to="." method="_on_area_3d_area_entered"]

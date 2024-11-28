@@ -1,7 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://dikv3pheie510"]
+[gd_scene load_steps=5 format=3 uid="uid://83gfagflne01"]
 
-[ext_resource type="Script" path="res://WorldObjects/Gates/gate.gd" id="1_wul0x"]
-[ext_resource type="Texture2D" uid="uid://bctwxyy831m1h" path="res://WorldObjects/Gates/GateGraphics/SmallGates-Sheet.png" id="1_y06lu"]
+[ext_resource type="Script" path="res://WorldObjects/Gates/gate.gd" id="1_tujjc"]
+[ext_resource type="Texture2D" uid="uid://c181eakc3djv3" path="res://WorldObjects/Circuit/CircuitGraphics/Blank.png" id="2_aaell"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_subln"]
 size = Vector3(0.64, 0.64, 0.32)
@@ -9,16 +9,15 @@ size = Vector3(0.64, 0.64, 0.32)
 [sub_resource type="BoxShape3D" id="BoxShape3D_fmer3"]
 size = Vector3(0.64, 0.64, 0.32)
 
-[node name="SmallGate" type="StaticBody3D"]
-script = ExtResource("1_wul0x")
+[node name="Blank" type="StaticBody3D"]
+script = ExtResource("1_tujjc")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("BoxShape3D_subln")
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
 texture_filter = 2
-texture = ExtResource("1_y06lu")
-hframes = 4
+texture = ExtResource("2_aaell")
 
 [node name="SpotLight3D" type="SpotLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 2, 0)
@@ -26,6 +25,7 @@ spot_range = 4.0
 spot_angle = 30.0
 
 [node name="Area3D" type="Area3D" parent="."]
+collision_layer = 2
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="Area3D"]
 transform = Transform3D(1.1, 0, 0, 0, 1.1, 0, 0, 0, 1.1, 0, 0, 0)

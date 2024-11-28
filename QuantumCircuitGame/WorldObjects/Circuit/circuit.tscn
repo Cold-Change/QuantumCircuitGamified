@@ -1,0 +1,130 @@
+[gd_scene load_steps=5 format=3 uid="uid://bmcuvfx3e7pai"]
+
+[ext_resource type="Texture2D" uid="uid://ct21ga8jq4e2y" path="res://WorldObjects/Circuit/CircuitGraphics/Circuit.png" id="1_qf27x"]
+[ext_resource type="Script" path="res://WorldObjects/Circuit/circuit.gd" id="1_wi6v7"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_tm12l"]
+size = Vector3(12.8, 2.88, 0.32)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_du848"]
+size = Vector3(0.1, 0.08, 0.32)
+
+[node name="Circuit" type="StaticBody3D"]
+collision_layer = 2
+script = ExtResource("1_wi6v7")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_tm12l")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+texture_filter = 2
+texture = ExtResource("1_qf27x")
+
+[node name="Gates" type="Node3D" parent="."]
+
+[node name="Buttons" type="Node3D" parent="."]
+
+[node name="Q0" type="Area3D" parent="Buttons"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.24, 0.479643, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Buttons/Q0"]
+transform = Transform3D(1.1, 0, 0, 0, 1.1, 0, 0, 0, 1.1, 0, 0, 0)
+shape = SubResource("BoxShape3D_du848")
+
+[node name="Q1" type="Area3D" parent="Buttons"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.24, -0.16, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Buttons/Q1"]
+transform = Transform3D(1.1, 0, 0, 0, 1.1, 0, 0, 0, 1.1, 0, 0, 0)
+shape = SubResource("BoxShape3D_du848")
+
+[node name="Q2" type="Area3D" parent="Buttons"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.24, -0.8, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Buttons/Q2"]
+transform = Transform3D(1.1, 0, 0, 0, 1.1, 0, 0, 0, 1.1, 0, 0, 0)
+shape = SubResource("BoxShape3D_du848")
+
+[node name="C0" type="Area3D" parent="Buttons"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.12, 1.12, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Buttons/C0"]
+transform = Transform3D(1.1, 0, 0, 0, 1.1, 0, 0, 0, 1.1, 0, 0, 0)
+shape = SubResource("BoxShape3D_du848")
+
+[node name="C1" type="Area3D" parent="Buttons"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.16, 1.12, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Buttons/C1"]
+transform = Transform3D(1.1, 0, 0, 0, 1.1, 0, 0, 0, 1.1, 0, 0, 0)
+shape = SubResource("BoxShape3D_du848")
+
+[node name="C2" type="Area3D" parent="Buttons"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.2, 1.12, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Buttons/C2"]
+transform = Transform3D(1.1, 0, 0, 0, 1.1, 0, 0, 0, 1.1, 0, 0, 0)
+shape = SubResource("BoxShape3D_du848")
+
+[node name="C3" type="Area3D" parent="Buttons"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.24, 1.12, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Buttons/C3"]
+transform = Transform3D(1.1, 0, 0, 0, 1.1, 0, 0, 0, 1.1, 0, 0, 0)
+shape = SubResource("BoxShape3D_du848")
+
+[node name="C4" type="Area3D" parent="Buttons"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.28, 1.12, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Buttons/C4"]
+transform = Transform3D(1.1, 0, 0, 0, 1.1, 0, 0, 0, 1.1, 0, 0, 0)
+shape = SubResource("BoxShape3D_du848")
+
+[node name="C5" type="Area3D" parent="Buttons"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.32, 1.12, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Buttons/C5"]
+transform = Transform3D(1.1, 0, 0, 0, 1.1, 0, 0, 0, 1.1, 0, 0, 0)
+shape = SubResource("BoxShape3D_du848")
+
+[node name="C6" type="Area3D" parent="Buttons"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.64, 1.12, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Buttons/C6"]
+transform = Transform3D(1.1, 0, 0, 0, 1.1, 0, 0, 0, 1.1, 0, 0, 0)
+shape = SubResource("BoxShape3D_du848")
+
+[node name="C7" type="Area3D" parent="Buttons"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.6, 1.12, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Buttons/C7"]
+transform = Transform3D(1.1, 0, 0, 0, 1.1, 0, 0, 0, 1.1, 0, 0, 0)
+shape = SubResource("BoxShape3D_du848")
+
+[node name="C8" type="Area3D" parent="Buttons"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.56, 1.12, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Buttons/C8"]
+transform = Transform3D(1.1, 0, 0, 0, 1.1, 0, 0, 0, 1.1, 0, 0, 0)
+shape = SubResource("BoxShape3D_du848")
+
+[node name="C9" type="Area3D" parent="Buttons"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.52, 1.12, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Buttons/C9"]
+transform = Transform3D(1.1, 0, 0, 0, 1.1, 0, 0, 0, 1.1, 0, 0, 0)
+shape = SubResource("BoxShape3D_du848")
+
+[node name="C10" type="Area3D" parent="Buttons"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.48, 1.12, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Buttons/C10"]
+transform = Transform3D(1.1, 0, 0, 0, 1.1, 0, 0, 0, 1.1, 0, 0, 0)
+shape = SubResource("BoxShape3D_du848")
+
+[node name="C11" type="Area3D" parent="Buttons"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.44, 1.12, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Buttons/C11"]
+transform = Transform3D(1.1, 0, 0, 0, 1.1, 0, 0, 0, 1.1, 0, 0, 0)
+shape = SubResource("BoxShape3D_du848")
