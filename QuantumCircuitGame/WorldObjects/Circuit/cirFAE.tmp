@@ -128,9 +128,3 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.44, 1.12, 0)
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Buttons/C11"]
 transform = Transform3D(1.1, 0, 0, 0, 1.1, 0, 0, 0, 1.1, 0, 0, 0)
 shape = SubResource("BoxShape3D_du848")
-
-[node name="GateRefractoryTimer" type="Timer" parent="."]
-wait_time = 0.1
-one_shot = true
-
-[connection signal="timeout" from="GateRefractoryTimer" to="." method="_on_gate_refractory_timer_timeout"]

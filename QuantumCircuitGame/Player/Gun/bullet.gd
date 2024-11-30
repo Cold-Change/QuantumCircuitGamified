@@ -22,3 +22,9 @@ func _on_hit_box_body_entered(body):
 		body.takeDamage(damage)
 	collisionMade = true
 	destroyBullet()
+
+func _on_hit_box_area_entered(area):
+	if area.has_method("takeDamage") and !collisionMade:
+		area.takeDamage(damage)
+	collisionMade = true
+	destroyBullet()
