@@ -1,12 +1,38 @@
-[gd_scene load_steps=8 format=3 uid="uid://bklgpcqp3hq4d"]
+[gd_scene load_steps=18 format=3 uid="uid://bklgpcqp3hq4d"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_anppc"]
 [ext_resource type="PackedScene" uid="uid://cmvfvhlf76e0s" path="res://WorldObjects/stage.tscn" id="1_p4oik"]
 [ext_resource type="PackedScene" uid="uid://bnl5lsnwdas3i" path="res://Player/player.tscn" id="2_b7m5a"]
 [ext_resource type="PackedScene" uid="uid://dikv3pheie510" path="res://WorldObjects/Gates/small_gate.tscn" id="4_jtt04"]
-[ext_resource type="PackedScene" uid="uid://cx8mhyp50y26t" path="res://WorldObjects/Gates/medium_gate.tscn" id="5_ck6cm"]
-[ext_resource type="PackedScene" uid="uid://gqmx0ttu6smj" path="res://WorldObjects/Gates/large_gate.tscn" id="6_3eu1s"]
+[ext_resource type="Script" path="res://WorldObjects/Gates/gate.gd" id="6_q5p8b"]
+[ext_resource type="Texture2D" uid="uid://bctwxyy831m1h" path="res://WorldObjects/Gates/GateGraphics/SmallGates-Sheet.png" id="7_ovm0l"]
 [ext_resource type="PackedScene" uid="uid://bmcuvfx3e7pai" path="res://WorldObjects/Circuit/circuit.tscn" id="7_rixbc"]
+[ext_resource type="Texture2D" uid="uid://bnhfxphdisv4b" path="res://WorldObjects/Gates/GateGraphics/MediumGatesShow-Sheet.png" id="9_pmeyv"]
+[ext_resource type="Texture2D" uid="uid://bix51oq7qqj6u" path="res://WorldObjects/Gates/GateGraphics/LargeGatesShow-Sheet.png" id="9_pyjpa"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_subln"]
+size = Vector3(0.64, 0.64, 0.32)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_fmer3"]
+size = Vector3(0.64, 0.64, 0.32)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_atf4u"]
+size = Vector3(0.64, 1.28, 0.32)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_i2slj"]
+size = Vector3(0.64, 1.28, 0.32)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1aqel"]
+size = Vector3(0.64, 1.28, 0.32)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_b2yfk"]
+size = Vector3(0.64, 1.28, 0.32)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_q2o0a"]
+size = Vector3(0.64, 1.92, 0.32)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_6kypb"]
+size = Vector3(0.64, 1.92, 0.32)
 
 [node name="Main" type="Node"]
 script = ExtResource("1_anppc")
@@ -14,7 +40,7 @@ script = ExtResource("1_anppc")
 [node name="Stage" parent="." instance=ExtResource("1_p4oik")]
 
 [node name="Player" parent="." instance=ExtResource("2_b7m5a")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 1, 0)
 
 [node name="SpotLight3D" type="SpotLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 225.546, 0)
@@ -27,23 +53,158 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 138.117, 0)
 light_energy = 0.05
 omni_range = 676.88
 
-[node name="SmallGate" parent="." instance=ExtResource("4_jtt04")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.02841, 3, 12)
-
-[node name="SmallGate2" parent="." instance=ExtResource("4_jtt04")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.19694, 3, 12)
-
-[node name="SmallGate3" parent="." instance=ExtResource("4_jtt04")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.60133, 3, 12)
-
-[node name="MediumGate" parent="." instance=ExtResource("5_ck6cm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.50908, 3, 12)
-
-[node name="MediumGate2" parent="." instance=ExtResource("5_ck6cm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.9779, 3, 12)
-
-[node name="LargeGate" parent="." instance=ExtResource("6_3eu1s")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.687, 3, 12)
-
 [node name="Circuit" parent="." instance=ExtResource("7_rixbc")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 5.94183, 4.5, 1.1743)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 5.94183, 4.5, 1.96475)
+
+[node name="GateSelection" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.35102, 4, -4.91598)
+
+[node name="HGate" parent="GateSelection" instance=ExtResource("4_jtt04")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 0)
+
+[node name="XGate" type="StaticBody3D" parent="GateSelection"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 0)
+script = ExtResource("6_q5p8b")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="GateSelection/XGate"]
+shape = SubResource("BoxShape3D_subln")
+
+[node name="Sprite3D" type="Sprite3D" parent="GateSelection/XGate"]
+texture_filter = 2
+texture = ExtResource("7_ovm0l")
+hframes = 4
+frame = 1
+
+[node name="SpotLight3D" type="SpotLight3D" parent="GateSelection/XGate"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 2, 0)
+spot_range = 4.0
+spot_angle = 30.0
+
+[node name="Area3D" type="Area3D" parent="GateSelection/XGate"]
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="GateSelection/XGate/Area3D"]
+transform = Transform3D(1.1, 0, 0, 0, 1.1, 0, 0, 0, 1.2, 0, 0, 0)
+shape = SubResource("BoxShape3D_fmer3")
+
+[node name="YGate" type="StaticBody3D" parent="GateSelection"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 0)
+script = ExtResource("6_q5p8b")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="GateSelection/YGate"]
+shape = SubResource("BoxShape3D_subln")
+
+[node name="Sprite3D" type="Sprite3D" parent="GateSelection/YGate"]
+texture_filter = 2
+texture = ExtResource("7_ovm0l")
+hframes = 4
+frame = 2
+
+[node name="SpotLight3D" type="SpotLight3D" parent="GateSelection/YGate"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 2, 0)
+spot_range = 4.0
+spot_angle = 30.0
+
+[node name="Area3D" type="Area3D" parent="GateSelection/YGate"]
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="GateSelection/YGate/Area3D"]
+transform = Transform3D(1.1, 0, 0, 0, 1.1, 0, 0, 0, 1.2, 0, 0, 0)
+shape = SubResource("BoxShape3D_fmer3")
+
+[node name="ZGate" type="StaticBody3D" parent="GateSelection"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 0)
+script = ExtResource("6_q5p8b")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="GateSelection/ZGate"]
+shape = SubResource("BoxShape3D_subln")
+
+[node name="Sprite3D" type="Sprite3D" parent="GateSelection/ZGate"]
+texture_filter = 2
+texture = ExtResource("7_ovm0l")
+hframes = 4
+frame = 3
+
+[node name="SpotLight3D" type="SpotLight3D" parent="GateSelection/ZGate"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 2, 0)
+spot_range = 4.0
+spot_angle = 30.0
+
+[node name="Area3D" type="Area3D" parent="GateSelection/ZGate"]
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="GateSelection/ZGate/Area3D"]
+transform = Transform3D(1.1, 0, 0, 0, 1.1, 0, 0, 0, 1.2, 0, 0, 0)
+shape = SubResource("BoxShape3D_fmer3")
+
+[node name="CXGate" type="StaticBody3D" parent="GateSelection"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
+script = ExtResource("6_q5p8b")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="GateSelection/CXGate"]
+shape = SubResource("BoxShape3D_atf4u")
+
+[node name="Sprite3D" type="Sprite3D" parent="GateSelection/CXGate"]
+texture_filter = 2
+texture = ExtResource("9_pmeyv")
+hframes = 2
+
+[node name="SpotLight3D" type="SpotLight3D" parent="GateSelection/CXGate"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 2, 0)
+spot_range = 4.0
+spot_angle = 30.0
+
+[node name="Area3D" type="Area3D" parent="GateSelection/CXGate"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="GateSelection/CXGate/Area3D"]
+transform = Transform3D(1.1, 0, 0, 0, 1.1, 0, 0, 0, 1.2, 0, 0, 0)
+shape = SubResource("BoxShape3D_i2slj")
+
+[node name="ReverseCXGate" type="StaticBody3D" parent="GateSelection"]
+script = ExtResource("6_q5p8b")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="GateSelection/ReverseCXGate"]
+shape = SubResource("BoxShape3D_1aqel")
+
+[node name="Sprite3D" type="Sprite3D" parent="GateSelection/ReverseCXGate"]
+texture_filter = 2
+texture = ExtResource("9_pmeyv")
+hframes = 2
+frame = 1
+
+[node name="SpotLight3D" type="SpotLight3D" parent="GateSelection/ReverseCXGate"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 2, 0)
+spot_range = 4.0
+spot_angle = 30.0
+
+[node name="Area3D" type="Area3D" parent="GateSelection/ReverseCXGate"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="GateSelection/ReverseCXGate/Area3D"]
+transform = Transform3D(1.1, 0, 0, 0, 1.1, 0, 0, 0, 1.2, 0, 0, 0)
+shape = SubResource("BoxShape3D_b2yfk")
+
+[node name="ToffoliGate" type="StaticBody3D" parent="GateSelection"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0)
+script = ExtResource("6_q5p8b")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="GateSelection/ToffoliGate"]
+shape = SubResource("BoxShape3D_q2o0a")
+
+[node name="Sprite3D" type="Sprite3D" parent="GateSelection/ToffoliGate"]
+texture_filter = 2
+texture = ExtResource("9_pyjpa")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="GateSelection/ToffoliGate"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 2, 0)
+spot_range = 4.0
+spot_angle = 30.0
+
+[node name="Area3D" type="Area3D" parent="GateSelection/ToffoliGate"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="GateSelection/ToffoliGate/Area3D"]
+transform = Transform3D(1.1, 0, 0, 0, 1.1, 0, 0, 0, 1.2, 0, 0, 0)
+shape = SubResource("BoxShape3D_6kypb")
+
+[connection signal="area_entered" from="GateSelection/XGate/Area3D" to="GateSelection/XGate" method="_on_area_3d_area_entered"]
+[connection signal="area_entered" from="GateSelection/YGate/Area3D" to="GateSelection/YGate" method="_on_area_3d_area_entered"]
+[connection signal="area_entered" from="GateSelection/ZGate/Area3D" to="GateSelection/ZGate" method="_on_area_3d_area_entered"]
+[connection signal="area_entered" from="GateSelection/CXGate/Area3D" to="GateSelection/CXGate" method="_on_area_3d_area_entered"]
+[connection signal="area_entered" from="GateSelection/ReverseCXGate/Area3D" to="GateSelection/ReverseCXGate" method="_on_area_3d_area_entered"]
+[connection signal="area_entered" from="GateSelection/ToffoliGate/Area3D" to="GateSelection/ToffoliGate" method="_on_area_3d_area_entered"]

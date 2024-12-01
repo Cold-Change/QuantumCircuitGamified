@@ -1,6 +1,5 @@
 res://world_environment.tres
 res://WorldObjects/Circuit/circuit.tscn
-res://WorldObjects/Gates/gate.gd
 res://WorldObjects/Circuit/circuit.gd
 res://Player/player.tscn
 res://Player/player_model.tscn
@@ -10,6 +9,8 @@ res://main.tscn
 res://Player/Gun/bullet.tscn
 res://WorldObjects/Circuit/blank.tscn
 res://WorldObjects/Gates/small_gate.tscn
-res://Player/Gun/bullet.gd
 res://WorldObjects/Gates/medium_gate.tscn
 res://WorldObjects/Gates/large_gate.tscn
+res://Globals.gd
+res://WorldObjects/Gates/gate.gd
+res://Player/player.gd

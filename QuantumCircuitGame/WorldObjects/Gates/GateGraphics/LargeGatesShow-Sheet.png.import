@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dnp518m08py7r"
-path.s3tc="res://.godot/imported/LargeGates-Sheet.png-d77cf61234e8b31a13a722a202d2bf1d.s3tc.ctex"
+uid="uid://bix51oq7qqj6u"
+path.s3tc="res://.godot/imported/LargeGatesShow-Sheet.png-f0bb3472ff767f48b930243883c989b8.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://WorldObjects/Gates/GateGraphics/LargeGates-Sheet.png"
-dest_files=["res://.godot/imported/LargeGates-Sheet.png-d77cf61234e8b31a13a722a202d2bf1d.s3tc.ctex"]
+source_file="res://WorldObjects/Gates/GateGraphics/LargeGatesShow-Sheet.png"
+dest_files=["res://.godot/imported/LargeGatesShow-Sheet.png-f0bb3472ff767f48b930243883c989b8.s3tc.ctex"]
 
 [params]
 

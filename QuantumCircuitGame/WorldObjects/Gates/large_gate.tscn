@@ -1,9 +1,9 @@
 [gd_scene load_steps=5 format=3 uid="uid://gqmx0ttu6smj"]
 
-[ext_resource type="Texture2D" uid="uid://bix51oq7qqj6u" path="res://WorldObjects/Gates/GateGraphics/LargeGates-Sheet.png" id="1_8if2c"]
+[ext_resource type="Texture2D" uid="uid://dnp518m08py7r" path="res://WorldObjects/Gates/GateGraphics/LargeGates-Sheet.png" id="1_8if2c"]
 [ext_resource type="Script" path="res://WorldObjects/Gates/gate.gd" id="1_j8klr"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_subln"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_q2o0a"]
 size = Vector3(0.64, 1.92, 0.32)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_6kypb"]
@@ -13,7 +13,7 @@ size = Vector3(0.64, 1.92, 0.32)
 script = ExtResource("1_j8klr")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-shape = SubResource("BoxShape3D_subln")
+shape = SubResource("BoxShape3D_q2o0a")
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
 texture_filter = 2
