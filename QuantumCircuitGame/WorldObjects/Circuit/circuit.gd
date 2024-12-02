@@ -2,7 +2,7 @@ extends StaticBody3D
 
 @onready var gates = $Gates
 @onready var gate_refractory_timer = $GateRefractoryTimer
-@onready var final_vector = $Sprite3D/FinalVector
+@onready var final_vector_label = $Sprite3D/FinalVector
 
 var can_remove_gate = true
 
@@ -107,7 +107,8 @@ func addGate(gate_position, gate_type = "Identity", gate_index = 0):
 	new_gate.sprite_3d.frame = gate_index
 
 func updateVector():
-	var matrix = zeroMatrix(8,8)
+	var final_vector = ZERO_VECTOR
+	var cumulative_matrix = IDENTITY_MATRIX_ARRAY[2]
 	for col in range(12):
 		var matrices_to_multiply = []
 		for row in range(2,-1,-1):
@@ -116,8 +117,10 @@ func updateVector():
 				matrices_to_multiply.append(-1)
 			elif gate_to_add.gate_type == "Small":
 				matrices_to_multiply.append(gate_to_add.sprite_3d.frame)
-		matrix = matrixMultiplication(tensorProduct3(matrices_to_multiply), ZERO_VECTOR)
-	final_vector.text = "1\n0\n0\n0\n0\n0\n0\n0\n"
+		var current_matrix = tensorProduct3(matrices_to_multiply)
+		cumulative_matrix = matrixMultiplication(cumulative_matrix, current_matrix)
+	final_vector = matrixMultiplication(cumulative_matrix, final_vector)
+	final_vector_label.text = str(final_vector[0][0]) + "\n" + str(final_vector[1][0]) + "\n" + str(final_vector[2][0]) + "\n" + str(final_vector[3][0]) + "\n" + str(final_vector[4][0]) + "\n" + str(final_vector[5][0]) + "\n" + str(final_vector[6][0]) + "\n" + str(final_vector[7][0])
 
 func zeroMatrix(nX, nY):
 	var matrix = []
@@ -134,7 +137,6 @@ func matrixMultiplication(matrix1, matrix2):
 		for j in range(matrix2[0].size()):
 			for k in range(matrix1[0].size()):
 				matrix[i][j] = matrix[i][j] + matrix1[i][k] * matrix2[k][j]
-	print(matrix)
 	return matrix
 
 func tensorProduct3(matrices):

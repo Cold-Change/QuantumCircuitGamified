@@ -11,6 +11,3 @@ res://WorldObjects/Circuit/blank.tscn
 res://WorldObjects/Gates/small_gate.tscn
 res://WorldObjects/Gates/medium_gate.tscn
 res://WorldObjects/Gates/large_gate.tscn
-res://Globals.gd
-res://WorldObjects/Gates/gate.gd
-res://Player/player.gd
